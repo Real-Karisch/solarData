@@ -421,8 +421,8 @@ def sunpowerTpFilter(df):
 
     return df
 
-def sunovaTpFilter(df):
-    pattern = 'sunova'
+def sunnovaTpFilter(df):
+    pattern = 'sunn?ova'
 
     df = reFilter(df, 'thirdParty', pattern, ignorecase = True)
 
@@ -457,7 +457,7 @@ def brightplanetTpFilter(df):
     return df
 
 def otherTpFilter(df):
-    patterns = ['sun ?run','vivint','freed(om|in) ?forever','solar ?city|tesla','^sun ?power','sunova','sungevity','semper ?solaris','solcius','bright ?planet']
+    patterns = ['sun ?run','vivint','freed(om|in) ?forever','solar ?city|tesla','^sun ?power','sunn?ova','sungevity','semper ?solaris','solcius','bright ?planet']
 
     otherInd = []
 
@@ -479,7 +479,7 @@ def otherTpFilter(df):
     return df
 
 def tpCsv(dict, filename):
-    installers = ['sunrun','vivint','freedomforever','solarcity','sunpower','sunova','sungevity','semper','solcius','brightplanet','other']
+    installers = ['sunrun','vivint','freedomforever','solarcity','sunpower','sunnova','sungevity','semper','solcius','brightplanet','other']
     mans = ['solaredge','enphase','sma','fronius','sunpower','aps','delta','ginlong','other']
 
     startingDate = pd.to_datetime('2013-12-31')
@@ -506,10 +506,10 @@ def tpMaster(df, numMonths):
 
     startingDate = pd.to_datetime('2013-12-31')
 
-    installers = ['sunrun','vivint','freedomforever','solarcity','sunpower','sunova','sungevity','semper','solcius','brightplanet','other']
+    installers = ['sunrun','vivint','freedomforever','solarcity','sunpower','sunnova','sungevity','semper','solcius','brightplanet','other']
     mans = ['solaredge','enphase','sma','fronius','sunpower','aps','delta','ginlong','other']
 
-    instFns = [sunrunTpFilter,vivintTpFilter,freedomforeverTpFilter,solarcityTpFilter,sunpowerTpFilter,sunovaTpFilter,sungevityTpFilter,semperTpFilter,solciusTpFilter,brightplanetTpFilter,otherTpFilter]
+    instFns = [sunrunTpFilter,vivintTpFilter,freedomforeverTpFilter,solarcityTpFilter,sunpowerTpFilter,sunnovaTpFilter,sungevityTpFilter,semperTpFilter,solciusTpFilter,brightplanetTpFilter,otherTpFilter]
     manFns = [solarEdgeFilter, enphaseFilter, smaFilter, froniusFilter, sunPowerFilter, apsFilter, deltaFilter, ginlongFilter, otherFilter]
 
     outDict = {}

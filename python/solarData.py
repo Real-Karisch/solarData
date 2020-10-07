@@ -56,8 +56,8 @@ tpData = resData[resData['thirdParty'].notna()]
 tpData.reset_index(inplace=True, drop=True)
 
 #prepare data
-simpleMaster(allData, numMonths = NUMMONTHS)
-instMaster(resData, numMonths = NUMMONTHS)
+#simpleMaster(allData, numMonths = NUMMONTHS)
+#instMaster(resData, numMonths = NUMMONTHS)
 tpMaster(tpData, numMonths=NUMMONTHS)
 
 end = time.time()
